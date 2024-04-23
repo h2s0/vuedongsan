@@ -12,8 +12,28 @@
     <h4>{{ product }}</h4>
     <p>{{ price[index] }} 만원</p>
   </div>
-</div>
 
+  <hr>
+
+<div style="display:flex">
+  <div class="box">
+    <h4>{{ products[0] }}</h4>
+    <p>{{ price[2] }} 만원</p>
+    <button @click="counts">허위매물신고</button> <span>신고 수 : {{ count }}</span>
+    <p>
+      버튼 설명 : click 말고도 mouseover 등등 종류가 많음.
+    </p>
+  </div>
+  <div class="box">
+    <h4>{{ products[1] }}</h4>
+    <p>{{ price[2] }} 만원</p>
+  </div>
+  <div class="box">
+    <h4>{{ products[2] }}</h4>
+    <p>{{ price[2] }} 만원</p>
+  </div>
+  </div>
+</div>
 
 </template>
 
@@ -23,14 +43,21 @@ export default {
   name: 'App',
   data(){
     return {
+      count : 0,
       price : [50, 30, 60],
       products: ['역삼동원룸', '화곡역원룸', '마포구투룸'],
       menus: ['Home', 'Shop', 'About']
     }
   },
   components: {
-  }
+  },
+  methods: { // vue 에서 함수만들고 싶을 때 사용
+    counts() {
+      this.count += 1;
+    },
+  },
 }
+
 </script>
 
 <style>
@@ -51,5 +78,13 @@ export default {
 .menu a {
   color: white;
   padding: 10px;
+}
+
+.box {
+  border: 1px solid #2c3e50;
+  border-radius: 15px;
+  padding: 10px;
+  margin: 15px;
+  width: 500px;
 }
 </style>
