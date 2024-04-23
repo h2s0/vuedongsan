@@ -1,16 +1,19 @@
 <template>
 
-<div class="menu">
-  <!-- 자료 안의 데이터 갯수만큼 반복됨, 작명한 변수는 데이터 안의 자료가 됨 -->
-  <a v-for="(menu, index) in menus" :key="index">{{ menu }}</a>
-</div>
-<h1>원룸샵</h1>
-<br />
+<div>
+  <div class="menu">
+    <!-- 자료 안의 데이터 갯수만큼 반복됨, 작명한 변수는 데이터 안의 자료가 됨 -->
+    <a v-for="(menu, index) in menus" :key="index">{{ menu }}</a>
+  </div>
+  <h1>원룸샵</h1>
+  <br />
 
-<div v-for="(data, index) in products" :key="index">
-  <h4>{{ products[index] }}</h4>
-  <p>{{ price[index] }} 만원</p>
+  <div v-for="(product, index) in products" :key="index">
+    <h4>{{ product }}</h4>
+    <p>{{ price[index] }} 만원</p>
+  </div>
 </div>
+
 
 </template>
 
