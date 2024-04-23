@@ -27,10 +27,12 @@
   <div class="box">
     <h4>{{ products[1] }}</h4>
     <p>{{ price[2] }} 만원</p>
+    <button @click="counts1">허위매물신고</button> <span>신고 수 : {{ count1 }}</span>
   </div>
   <div class="box">
     <h4>{{ products[2] }}</h4>
     <p>{{ price[2] }} 만원</p>
+    <button @click="counts2">허위매물신고</button> <span>신고 수 : {{ count2 }}</span>
   </div>
   </div>
 </div>
@@ -44,6 +46,8 @@ export default {
   data(){
     return {
       count : 0,
+      count1 : 0,
+      count2 : 0,
       price : [50, 30, 60],
       products: ['역삼동원룸', '화곡역원룸', '마포구투룸'],
       menus: ['Home', 'Shop', 'About']
@@ -54,6 +58,12 @@ export default {
   methods: { // vue 에서 함수만들고 싶을 때 사용
     counts() {
       this.count += 1;
+    },
+    counts1() {
+      this.count1 += 1;
+    },
+    counts2() {
+      this.count2 += 1;
     },
   },
 }
