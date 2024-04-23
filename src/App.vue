@@ -1,18 +1,17 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <div>
-    원룸샵
-    <h4>{{ products[0] }}</h4>
-    <p>{{ price1 }} 만원</p>
-  </div>
-  <div>
-    <h4>{{ products[1] }}</h4>
-    <p>{{ price2 }} 만원</p>
-  </div>
-  <div>
-    <h4>{{ products[2] }}</h4>
-    <p>{{ price2 }} 만원</p>
-  </div>
+
+<div class="menu">
+  <!-- 자료 안의 데이터 갯수만큼 반복됨, 작명한 변수는 데이터 안의 자료가 됨 -->
+  <a v-for="(menu, index) in menus" :key="index">{{ menu }}</a>
+</div>
+<h1>원룸샵</h1>
+<br />
+
+<div v-for="(data, index) in products" :key="index">
+  <h4>{{ products[index] }}</h4>
+  <p>{{ price[index] }} 만원</p>
+</div>
+
 </template>
 
 <script>
@@ -21,9 +20,9 @@ export default {
   name: 'App',
   data(){
     return {
-      price1 : 50,
-      price2 : 60,
-      products: ['역삼동원룸', '화곡역원룸', '마포구투룸']
+      price : [50, 30, 60],
+      products: ['역삼동원룸', '화곡역원룸', '마포구투룸'],
+      menus: ['Home', 'Shop', 'About']
     }
   },
   components: {
@@ -38,6 +37,16 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+
+.menu {
+  background: darkolivegreen;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.menu a {
+  color: white;
+  padding: 10px;
 }
 </style>
