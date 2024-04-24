@@ -16,60 +16,15 @@
   <h1>원룸샵</h1>
   <br />
 
-<div style="display:flex">
-  <div v-for="rooms in products" :key="rooms.id" class="box">
-    <h4 @click="modalstate = true">{{ rooms.title }}</h4>
-    <p>{{ rooms.price }} 원</p>
-    <button @click="counts[index] += 1">허위매물신고</button>
-    <span> 신고 수 : {{ counts[index] }}</span>
-  </div>
-</div>
-
-  <hr>
-
-<div class="box-wrapper">
-  <div class="box">
-    <img :src="rooms[0].image" alt="">
-    <h4 @click="modalstate = true">{{ rooms[0].title }}</h4>
-    <p>{{ rooms[0].price }} 원</p>
-    <p>{{ rooms[0].content }}</p>
-    <button @click="counts[0] ++">허위매물신고</button> <span>신고 수 : {{ counts[0] }}</span>
-  </div>
-  <div class="box">
-    <img :src="rooms[1].image" alt="">
-    <h4 @click="modalstate = true">{{ rooms[1].title }}</h4>
-    <p>{{ rooms[1].price }} 원</p>
-    <p>{{ rooms[1].content }}</p>
-    <button @click="counts[1] ++">허위매물신고</button> <span>신고 수 : {{ counts[1] }}</span>
-  </div>
-  <div class="box">
-    <img :src="rooms[2].image" alt="">
-    <h4 @click="modalstate = true">{{ rooms[2].title }}</h4>
-    <p>{{ rooms[2].price }} 원</p>
-    <p>{{ rooms[2].content }}</p>
-    <button @click="counts[2] ++">허위매물신고</button> <span>신고 수 : {{ counts[2] }}</span>
-  </div>
-  <div class="box">
-    <img :src="rooms[3].image" alt="">
-    <h4 @click="modalstate = true">{{ rooms[3].title }}</h4>
-    <p>{{ rooms[3].price }} 원</p>
-    <p>{{ rooms[3].content }}</p>
-    <button @click="counts[3] ++">허위매물신고</button> <span>신고 수 : {{ counts[3] }}</span>
-  </div>
-  <div class="box">
-    <img :src="rooms[4].image" alt="">
-    <h4 @click="modalstate = true">{{ rooms[4].title }}</h4>
-    <p>{{ rooms[4].price }} 원</p>
-    <p>{{ rooms[4].content }}</p>
-    <button @click="counts[4] ++">허위매물신고</button> <span>신고 수 : {{ counts[4] }}</span>
+  <div class="box-wrapper">
+    <div v-for="rooms in rooms" :key="rooms.id" class="box">
+      <img :src="rooms.image" alt="">
+      <h4 @click="modalstate = true">{{ rooms.title }}</h4>
+      <p>{{ rooms.price }} 원</p>
+      <p>{{ rooms.content }} 원</p>
+      <button @click="counts[rooms.id] += 1">허위매물신고</button>
+      <span> 신고 수 : {{ counts[rooms.id] }}</span>
     </div>
-      <div class="box">
-      <img :src="rooms[5].image" alt="">
-      <h5 @click="modalstate = true">{{ rooms[5].title }}</h5>
-      <p>{{ rooms[5].price }} 원</p>
-      <p>{{ rooms[5].content }}</p>
-      <button @click="counts[5] ++">허위매물신고</button> <span>신고 수 : {{ counts[5] }}</span>
-  </div>
   </div>
 </div>
 
